@@ -1,5 +1,3 @@
-// "Authorization: 563492ad6f91700001000001a50a88b169414f23997c51b91ce7e946" \
-//"https://api.pexels.com/v1/search?query=people"
 import axios from "axios";
 
 export const getImages = async (searchTerm = "programming") =>
