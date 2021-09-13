@@ -20,7 +20,13 @@ export default function App() {
           options={{
             headerLeft: () => <Image source={Pexel} style={styles.logo} />,
             title: "Pexels App",
-            headerRight: () => <Text>Hello</Text>,
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#0D0D0D",
+            },
+            headerRight: () => (
+              <Text style={{ color: "white", fontSize: 18 }}>Search</Text>
+            ),
           }}
         />
         <Stack.Screen name="ImageScreen" component={ImageScreen} />
