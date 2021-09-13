@@ -7,7 +7,7 @@ const CardImage = ({ image }) => {
   return (
     <TouchableOpacity
       style={styles.cardImage}
-      onPress={() => navigatation.navigate("ImageScreen")}
+      onPress={() => navigatation.navigate("ImageScreen", { image })}
     >
       <Image
         source={{
