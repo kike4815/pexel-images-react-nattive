@@ -11,8 +11,8 @@ const CardImage = ({ image }) => {
     >
       <Image
         source={{
-          uri: image.src.small
-            ? image.src.small
+          uri: image.src.portrait
+            ? image.src.portrait
             : "https://cdn.iconscout.com/icon/free/png-512/no-image-1771002-1505134.png",
         }}
         style={{ height: 180, width: "100%" }}
