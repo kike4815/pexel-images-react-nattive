@@ -53,12 +53,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#0D0D0D",
     width: "100%",
     paddingLeft: 10,
-    flex: 1 / 4,
+    paddingRight: 80,
+    flex: 1 / 5,
+    flexDirection: "row",
+    alignItems: "center",
   },
   searchInput: {
     backgroundColor: "#2c292c",
     borderBottomWidth: 0,
     paddingHorizontal: 4,
+    color: "white",
   },
 });
 
