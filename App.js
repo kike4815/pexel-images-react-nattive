@@ -36,7 +36,17 @@ export default function App() {
         >
           {(props) => <HomeScreen {...props} openSearch={openSearch} />}
         </Stack.Screen>
-        <Stack.Screen name="ImageScreen" component={ImageScreen} />
+        <Stack.Screen
+          name="ImageScreen"
+          component={ImageScreen}
+          options={{
+            title: "Pexels App",
+            headerTintColor: "#fff",
+            headerStyle: {
+              backgroundColor: "#0D0D0D",
+            },
+          }}
+        />
       </Stack.Navigator>
       <StatusBar />
     </NavigationContainer>

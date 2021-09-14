@@ -6,9 +6,10 @@ import { Input, Button } from "react-native-elements";
 
 const HomeScreen = ({ openSearch }) => {
   const [photos, setPhotos] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const loadImages = async () => {
-    const res = await getImages();
+  const loadImages = async (searchTerm) => {
+    const res = await getImages(searchTerm);
     setPhotos(res.data.photos);
   };
 
@@ -16,16 +17,26 @@ const HomeScreen = ({ openSearch }) => {
     loadImages();
   }, []);
 
+  const handleSearch = async () => {
+    await loadImages(searchTerm);
+  };
+
   return (
     <>
       {openSearch && (
         <View style={styles.searchSection}>
           <Input
             placeholder="Search a term"
-            style={styles.searchInput}
+            inputContainerStyle={styles.searchInput}
+            style={styles.input}
             leftIcon={{ type: "feather", name: "search", color: "white" }}
+            onChangeText={(value) => setSearchTerm(value)}
           />
-          <Button title="Search" />
+          <Button
+            title="Search"
+            buttonStyle={styles.buttonSearch}
+            onPress={() => handleSearch()}
+          />
         </View>
       )}
       <View style={styles.container}>
@@ -62,7 +73,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#2c292c",
     borderBottomWidth: 0,
     paddingHorizontal: 4,
-    color: "white",
+  },
+  input: {
+    color: "#fff",
+  },
+  buttonSearch: {
+    backgroundColor: "#229783",
+    marginBottom: 27,
   },
 });
 
